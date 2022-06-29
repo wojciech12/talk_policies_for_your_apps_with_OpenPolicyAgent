@@ -1,4 +1,4 @@
-## Adding policies to your Apps with Open Policy Agent
+## Adding policies to your Golang App with Open Policy Agent
 
 It might feel like chasing a rabbit to keep up with users’ requests for new configurations and policies. It is even more challenging if you build for power users. In the talk, I will show how to use the Open Policy Agent (OPA) for these scenarios, share our experience in Spacelift, and present how to integrate OPA into your Golang application.
 
