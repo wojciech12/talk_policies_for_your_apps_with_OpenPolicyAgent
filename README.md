@@ -5,8 +5,6 @@ It might feel like chasing a rabbit to keep up with users’ requests for new co
 - slides: [pdf](slides/index.pdf) / [html](slides/)
 - code example: [golang](example/)
 
-<!--
-1. Problem with policies
-2. Why OPA? Benefits of Policy-as-a-code
-3. How to use it in Golang
--->
+Helpful? Please <code>star</code> the github repo or <code>like</code> the [LinkedIN post](https://www.linkedin.com/posts/wojciechbarczynski_go-meetup-8-prague-activity-6945842769026289664-lwDE) about this talk.
+
+Questions? feedback? Let me know - wojciechb@spacelift.io, I am also on the Gophers slack.
