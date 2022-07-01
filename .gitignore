@@ -1,3 +1,6 @@
-**/opa
 .DS_Store
+**/opa
 **/.idea
+**/vendor
+**/node_modules
+**/package*json
