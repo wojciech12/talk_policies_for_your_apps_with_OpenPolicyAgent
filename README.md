@@ -7,4 +7,6 @@ It might feel like chasing a rabbit to keep up with users’ requests for new co
 
 Helpful? Please <code>star</code> the github repo or <code>like</code> the [LinkedIN post](https://www.linkedin.com/posts/wojciechbarczynski_go-meetup-8-prague-activity-6945842769026289664-lwDE) about this talk.
 
-Questions? feedback? Let me know - wojciechb@spacelift.io, I am also on the Gophers slack.
+Questions? feedback? Let me know - wojciechb@spacelift.io, I am also on the Gophers and Kuberentes slacks.
+
+[Spacelift](https://spacelift.io) helps you to continuously deploy your Infrastructure-as-a-Code, open your cloud resources to the large part of your engineering organization, work collaboratively with them, and do it all in a safe and auditable way

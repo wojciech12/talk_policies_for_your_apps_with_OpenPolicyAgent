@@ -28,7 +28,7 @@ const clientLoginPolicy = `
 
 	teams := input.session.teams
 
-	admin { teams[_] == "DevOps" }
+	admin { teams[_] == "Platform" }
 	allow { teams[_] == "Engineering" }
 	deny  { not input.session.member }`
 
@@ -48,7 +48,8 @@ func main() {
 
 	inputRaw := `{
 		"session": {
-			"teams": ["DevOps"],
+			"login": "natalia12",
+			"teams": ["Platform"],
 			"member": true
 		}
 	}`
@@ -56,6 +57,7 @@ func main() {
 	var input interface{}
 	err = json.NewDecoder(bytes.NewBufferString(inputRaw)).Decode(&input)
 	if err != nil {
+		fmt.Printf("%v", err)
 		os.Exit(2)
 	}
 

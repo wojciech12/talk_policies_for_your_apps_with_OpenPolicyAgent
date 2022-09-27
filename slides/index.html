@@ -60,7 +60,27 @@
 					</div>
 				</section>
 
-				<section data-markdown>
+							<section>
+					<h3>B<span style="text-transform: lowercase;">uilding your own app</span></h3>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-5'>
+								<p>Spacelift.io:</p>
+								<ul>
+									<li>SaaS continuous Deployment<br />for Infra-as-a-Code</li>
+									<li>Power users</li>
+								</ul>
+							</div>
+							<div class='col-md-7'>
+								<img width="100%" style="object-fit: fill;" src="https://1737839032-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LshwwDZmA4HXN0k9e8O%2Fuploads%2Fw2sPZz6sRrgalfBd3PV3%2FScreen%20Shot%202022-06-29%20at%202.47.11%20PM.png?alt=media&token=244f5ab7-7922-434b-a539-203af6840ecd" />
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Spacelift helps you to continuously deploy your IaC, open your cloud resources to the large part of your engineering organization, work collaboratively with them, and do it all in a safe and auditable way -->
+
+				<!-- section data-markdown>
 					<script type="text/template">
 ### C<span style="text-transform: lowercase;">hallenge</span>
 
@@ -69,7 +89,7 @@ At Spacelift:
 - We build an Infra-as-a-Code SaaS for power users.
 - We need a safe and flexible way for users to customize our platform
 					</script>
-				</section>
+				</section -->
 
 				<section data-markdown>
 					<script type="text/template">
@@ -88,16 +108,25 @@ At Spacelift:
 					</script>
 				</section>
 
+				<section data-markdown>
+					<script type="text/template">
+### P<span style="text-transform: lowercase;">olicy-as-a-code</span>
+
+- Dedicated language with safety guarantees
+- Work on loosly structured data
+- JSON support
+					</script>
+				</section>
+
 				<section>
 					<h3>O<span style="text-transform: lowercase;">pen</span> P<span style="text-transform: lowercase;">olicy</span> A<span style="text-transform: lowercase;">gent</span></h3>
 					<div class="container">
 						<div class="row">
-							<div class='col-md-6'>
+							<div class='col-md-6 '>
 								<p><ol>
-									<li>Policy-as-a-Code</li>
-									<li>Query/transformation language (rego)</li>
-									<li>Works on loosly structured input &amp; data</li>
-									<li>With JSON support</li>
+									<li>Rego - query/transformation language;</li>
+									<li>Works on loosly structured</li>
+									<li>JSON support</li>
 								</ol></p>
 							</div>
 							<div class='col-md-6'>
@@ -107,6 +136,23 @@ At Spacelift:
 					</div>
 				</section>
 
+				<section>
+					<h4>O<span style="text-transform: lowercase;">pen</span> P<span style="text-transform: lowercase;">olicy</span> A<span style="text-transform: lowercase;">gent</span></h4>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-5'>
+								<img width="55%" src="img/opa-no-text-color.png" />
+								<p><smalL>Created by<br /><img src="https://d33wubrfki0l68.cloudfront.net/ce60c030ed59a4a5e5809aadbaf79f8ed13bcb67/b825f/img/styra-logo.jpg" /></small></p>
+								<p><small><a href="https://www.openpolicyagent.org/">openpolicyagent.org</a></smalL></p>
+							</div>
+							<div class='col-md-7'>
+								<img width="90%" style="object-fit: fill;" src="https://d33wubrfki0l68.cloudfront.net/965b3d00a65c84c83bed88b2e70f1a3baff767cc/801b5/img/banner-image.png" />
+							</div>
+						</div>
+					</div>
+				</section>
+
+
 				<section data-markdown>
 					<script type="text/template">
 ### D<span style="text-transform: lowercase;">emo</span>
@@ -114,34 +160,6 @@ At Spacelift:
 <a href="https://play.openpolicyagent.org/">play.openpolicyagent.org</a>
 					</script>
 				</section>
-
-<!--
-Example: https://docs.spacelift.io/concepts/policy/login-
-
-package spacelift
-
-teams := input.session.teams
-
-admin { teams[_] == "DevOps" }
-allow { teams[_] == "Engineering" }
-deny  { not input.session.member }
-
-Example:
-
-{
-    "session" : 
-    {
-        "teams": ["DevOps"],
-        "member": true
-    }
-}
-
-Data:
-
-{
-   "company": "Spacelift"	   
-}
--->
 
 				<section data-markdown>
 					<script type="text/template">
@@ -151,8 +169,8 @@ Input:
 
 <pre style="display: block; width: 100%;"><code class="language-json">{
   "session": {
-    "login": "wojciech12",
-    "teams": ["DevOps"],
+    "login": "natalia12",
+    "teams": ["Platform"],
     "member": true
   }
 }</code></pre>
@@ -187,7 +205,7 @@ Policy:
 <pre style="display: block; width: 100%;"><code class="language-js">package talk_opa
 teams := input.session.teams
 
-admin { teams[_] == "DevOps" }
+admin { teams[_] == "Platform" }
 allow { teams[_] == "Engineering" }
 deny  { not input.session.member }</code></pre>
 					</script>
@@ -197,16 +215,18 @@ deny  { not input.session.member }</code></pre>
 					<script type="text/template">
 ### R<span style="text-transform: lowercase;">ego</span>
 
+- Readable and easier for non-programmers*;
 
 - Declarative;
 
-- Supports arbitrarily nested documents (e.g. graphs);
+- Inspired by [Datalog](https://en.wikipedia.org/wiki/Datalog);
 
-- Readable and easier for non-programmers*;
+- Safe and guaranteed to terminate.
 					</script>
 				</section>
+				<!-- Supports arbitrarily nested documents (e.g. graphs); -->
 
-				<section data-markdown>
+				<!-- section data-markdown>
 					<script type="text/template">
 ### R<span style="text-transform: lowercase;">ego</span>
 
@@ -214,8 +234,15 @@ deny  { not input.session.member }</code></pre>
   - non Turing-complete - no loops or conditionals;
   - guaranteed to terminate;
   - ensures that queries are correct<br />and unambiguous.
+					</script>
+				</section -->
 
-- [Build-in functions](https://www.openpolicyagent.org/docs/latest/policy-reference/#built-in-functions)
+							<section data-markdown>
+					<script type="text/template">
+### R<span style="text-transform: lowercase;">ego</span>
+
+- Build-in functions ([docs](https://www.openpolicyagent.org/docs/latest/policy-reference/#built-in-functions)):<br /> `sort`, `array.concat`, `json.filter`, `strings.any_suffix_match`, ...;
+- You can add your own functions.
 					</script>
 				</section>
 
@@ -244,38 +271,6 @@ Open Policy Agent (OPA) generates policy decisions by evaluating the query input
 					<script type="text/template">
 ### R<span style="text-transform: lowercase;">ego</span>
 
-Rego is a high-level declarative language to express OPA policies. ([docs](https://www.openpolicyagent.org/docs/latest/#rego)).
-
-```javascript
-# login policy
-teams := input.session.teams
-
-admin { teams[_] == "DevOps" }
-allow { teams[_] == "Engineering" }
-deny  { not input.session.member }
-```
-					</script>
-				</section -->
-
-				<!-- section>
-					<h3>R<span style="text-transform: lowercase;">ego</span></h3>
-
-Rego is a high-level declarative language to express OPA policies (<a href="https://www.openpolicyagent.org/docs/latest/#rego">docs</a>).
-
-<pre style="display: block; width: 100%;"><code class="language-js"># login policy
-teams := input.session.teams
-
-admin { teams[_] == "DevOps" }
-allow { teams[_] == "Engineering" }
-deny  { not input.session.member }</pre></code>
-				</section -->
-
-
-
-				<!-- section data-markdown>
-					<script type="text/template">
-### R<span style="text-transform: lowercase;">ego</span>
-
 Input:
 
 ```json
@@ -297,12 +292,45 @@ Input:
 
 				<section data-markdown>
 					<script type="text/template">
+### D<span style="text-transform: lowercase;">emo</span>
+
+More complex examples:
+
+- [Login &amp; time restriction](https://docs.spacelift.io/concepts/policy/login-policy#restricting-access-to-specific-circumstances)
+- [Approve](https://docs.spacelift.io/concepts/policy/approval-policy#role-based-approval)
+- [Plan](https://docs.spacelift.io/concepts/policy/terraform-plan-policy#organizational-rule-enforcement) 
+- [rule for conftest](https://github.com/open-policy-agent/conftest)
+- .. [can get complex](https://github.com/spacelift-io/spacelift-policies-example-library/blob/main/plan/infracost-monthly-cost-restriction.rego)
+					</script>
+				</section>
+				<!--
+deny["wojciech12"] {
+    input.spacelift.commit.author == "wojciech12"
+}
+				-->
+
+				<!-- 
+					- [Trigger](https://docs.spacelift.io/concepts/policy/trigger-policy#interdependent-stacks)
+				-->
+
+				<section data-markdown>
+					<script type="text/template">
+### Y<span style="text-transform: lowercase;">our app/tool</span>
+
+<img src="img/opa_two_modes.png" width="50%" />
+
+<p><small>Library: Golang &amp; Wasm (experimental).</small></p>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
 ### G<span style="text-transform: lowercase;">olang & </span>OPA
 
 - Golang lib - embed OPA
 - Golang SDK - high level API
 
-<p><small>See <a href="https://www.openpolicyagent.org/docs/latest/integration/#comparison">docs</a></small></p> 
+<p><small>See <a href="https://www.openpolicyagent.org/docs/latest/integration/#comparison">docs</a>.</small></p> 
 					</script>
 				</section>
 
@@ -317,6 +345,8 @@ Let's dive into the code.
 				<section data-markdown>
 					<script type="text/template">
 ### G<span style="text-transform: lowercase;">olang & </span>OPA
+
+Security:
 
 ```golang
 var (
@@ -339,6 +369,32 @@ rego.UnsafeBuiltins(unsafeBuiltins)
 
 				<section data-markdown>
 					<script type="text/template">
+### G<span style="text-transform: lowercase;">olang & </span>OPA
+
+Custom functions:
+
+```golang
+r := rego.New(
+	rego.Query(`x = hello("natalia")`),
+	rego.Function1(
+		&rego.Function{
+			Name: "hello",
+			Decl: types.NewFunction(types.Args(types.S), types.S),
+		},
+		func(_ rego.BuiltinContext, a *ast.Term) (*ast.Term, error) {
+			if str, ok := a.Value.(ast.String); ok {
+				return ast.StringTerm("hello, " + string(str)), nil
+			}
+			return nil, nil
+		}),
+)
+```
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
 ### L<span style="text-transform: lowercase;">essons learnt</span>
 
 Open Policy Agent:
@@ -352,10 +408,21 @@ Open Policy Agent:
 					<script type="text/template">
 ### L<span style="text-transform: lowercase;">essons learnt</span>
 
-Rego requires some time to master:
+Rego requires time to master:
 
-- [examples](https://github.com/spacelift-io/spacelift-policies-example-library) and [docs](https://docs.spacelift.io/concepts/policy)
-- [policy testing](https://www.openpolicyagent.org/docs/latest/policy-testing/)
+1. [Policy workbench with samples](https://docs.spacelift.io/concepts/policy#policy-workbench-in-practice)
+2. [examples](https://github.com/spacelift-io/spacelift-policies-example-library) and [docs](https://docs.spacelift.io/concepts/policy)
+3. [policy testing](https://www.openpolicyagent.org/docs/latest/policy-testing/)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### L<span style="text-transform: lowercase;">essons learnt</span>
+
+Styra, for example, provides an interactive builder:
+
+- [Policy Builder](https://docs.styra.com/policies/policy-authoring/policy-builder/use-policy-builder)
 					</script>
 				</section>
 
@@ -377,7 +444,19 @@ Watch out:
 					</script>
 				</section><!-- small><p><a href="https://www.openpolicyagent.org/docs/latest/ecosystem/">docs</a></p></small -->
 
+
 				<section data-markdown>
+					<script type="text/template">
+### DX, P<span style="text-transform: lowercase;">latform &amp; infa teams</span>
+
+- Enforce best practices</li>
+- Encourage other teams to contribute
+
+<p><small>see e.g, <a href="https://www.conftest.dev/">conftest</a></small></p>
+					</script>
+				</section>
+
+				<!-- section data-markdown>
 					<script type="text/template">
 <img src="img/spacelift_logo.svg" width="40%" />
 
@@ -385,16 +464,58 @@ Slides and code:<br />[github.com/wojciech12](https://github.com/wojciech12/talk
 
 <p><small><b>Wojciech Barczynski</b><br/><i>wojciechb@spacelift.io</i></small></p>
 					</script>
+				</section -->
+
+				<section data-markdown>
+					<script type="text/template">
+<img src="img/spacelift_logo.svg" width="40%" />
+
+<b>Thank you. Questions?</b><br />
+
+<p><small><b>Wojciech Barczynski</b><br/><i>wojciechb@spacelift.io</i><br />
+<br />
+<br />github:<br /><a href="https://github.com/wojciech12/talk_policies_for_your_apps_with_OpenPolicyAgent">wojciech12/talk_policies_for_your_apps_with_OpenPolicyAgent</a></small></p>
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+<img src="img/spacelift_logo.svg" width="40%" />
+
+<b>Hiring</b><br />Frontend and (Go) Backend developers<br />with a passion for building tools<br /> for other engineers.
+					</script>
 				</section>
 
 				<section data-markdown>
 					<script type="text/template">
-
-<img src="img/spacelift_logo.svg" width="40%" />
-
-<b>Hiring</b><br />(Go) Backend and Frontend developers<br />with a passion for building tools<br /> for other engineers.
+# B<span style="text-transform: lowercase;">ackup slides</span>
 					</script>
 				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### C<span style="text-transform: lowercase;">heckers &amp; linters</span>
+
+Kuberentes, Terraform, and many others:
+
+- [conftest](https://www.conftest.dev/)
+- [kics.io](https://github.com/Checkmarx/kics/blob/master/docs/queries.md)
+					</script>
+				</section>
+				<!--
+				https://www.checkov.io/
+				-->
+
+				<section data-markdown>
+					<script type="text/template">
+### A<span style="text-transform: lowercase;">lternatives</span>
+
+- [cuelang](https://cuelang.org/)
+- [kyverno](https://kyverno.io/)
+- [Sentinel](https://docs.hashicorp.com/sentinel/concepts/policy-as-code)
+					</script>
+				</section>				
 
 				<!--
 					https://cuelang.org/
